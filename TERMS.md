@@ -2,6 +2,8 @@
 
 Last updated: March 18, 2026
 
+> AirHorizon is not aviation-certified and must not be used as a primary flight, navigation, or other safety-critical instrument.
+
 ## Overview and Acceptance
 These Terms of Use ("Terms") govern your use of the AirHorizon iOS and iPadOS application and any related content, features, upgrades, and services made available through the application (collectively, the "App"). The App is provided by Valerii Nikolaev ("we," "us," "our," or the "developer").
 

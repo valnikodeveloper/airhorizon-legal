@@ -63,6 +63,18 @@
       text-transform: uppercase;
       letter-spacing: 0.2px;
     }
+    .warning {
+      border: 1px solid rgba(139, 30, 30, 0.16);
+      background: rgba(139, 30, 30, 0.05);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-top: 14px;
+    }
+    .warning p {
+      margin: 0;
+      color: var(--warn);
+      font-weight: 700;
+    }
   </style>
 </head>
 <body>
@@ -70,6 +82,13 @@
     <article class="card">
       <h1>Terms of Use for AirHorizon</h1>
       <p class="muted"><strong>Last updated:</strong> March 18, 2026</p>
+
+      <div class="warning">
+        <p>
+          AirHorizon is not aviation-certified and must not be used as a primary flight, navigation,
+          or other safety-critical instrument.
+        </p>
+      </div>
 
       <h2>Overview and Acceptance</h2>
       <p>
