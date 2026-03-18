@@ -3,8 +3,8 @@
 Legal documents for the AirHorizon iOS application.
 
 ## Files
-- `TERMS.md` - source Terms of Use text in Markdown
-- `terms.html` - publishable HTML version for website / GitHub Pages
+- `TERMS.md` - English Terms of Use in Markdown
+- `terms.html` - English HTML version for website / GitHub Pages
 
 ## Suggested publishing flow
 1. Push this repository to GitHub.
