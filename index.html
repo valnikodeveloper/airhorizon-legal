@@ -190,7 +190,15 @@ tr:last-child td{border-bottom:none}
   background:rgba(10,14,19,.72) url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233ddc7a'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E") center/26px no-repeat;
   border:1px solid rgba(61,220,122,.5)
 }
-.video-thumb iframe{width:100%;height:100%;border:0}
+/* YouTube always lays out a 16:9 stage inside the iframe, so a vertical
+   Short ends up letterboxed. Make the iframe (16/9)^2 = 316% wide, pin its
+   height to the card, and clip the leftover player chrome at the sides —
+   the 9:16 video then fills the card exactly. */
+.video-stage{position:relative;aspect-ratio:9/16;width:100%;overflow:hidden;background:#000}
+.video-stage iframe{
+  position:absolute;top:0;left:50%;transform:translateX(-50%);
+  height:100%;width:316%;border:0
+}
 .video-card p{padding:14px 16px;margin:0;color:var(--muted);font-size:.9rem}
 
 /* ---------- disclaimer ---------- */
@@ -568,19 +576,14 @@ footer{border-top:1px solid var(--line);padding:30px 0 40px;color:var(--muted);f
     btn.addEventListener('click', function () {
       var id = btn.dataset.yt;
       var frame = document.createElement('iframe');
-      frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+      frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1';
       frame.title = btn.getAttribute('aria-label') || 'AirHorizon video';
       frame.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
       frame.allowFullscreen = true;
-      btn.replaceChildren(frame);
-      btn.style.cursor = 'default';
-      btn.classList.remove('video-thumb');
-      btn.classList.add('video-thumb-loaded');
-      btn.style.aspectRatio = '9/16';
-      btn.style.width = '100%';
-      btn.style.border = '0';
-      btn.style.padding = '0';
-      btn.style.display = 'block';
+      var stage = document.createElement('div');
+      stage.className = 'video-stage';
+      stage.appendChild(frame);
+      btn.replaceWith(stage);
     }, { once: true });
   });
 </script>
