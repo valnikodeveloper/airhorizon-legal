@@ -58,10 +58,12 @@ body{
 img,video{max-width:100%;display:block}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
-section{padding:72px 0;border-top:1px solid rgba(34,48,61,.6)}
+/* Horizontal only — a `padding` shorthand here would out-specify the
+   vertical section padding below, since every section also carries .wrap */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:20px}
+section{padding:clamp(76px,8.5vw,124px) 0;border-top:1px solid rgba(34,48,61,.6)}
 section:first-of-type{border-top:none}
-h1,h2,h3{line-height:1.2;margin:0 0 14px}
+h1,h2,h3{line-height:1.2;margin:0 0 16px}
 h1{font-size:clamp(2rem,5.2vw,3.3rem);letter-spacing:-.02em}
 h2{font-size:clamp(1.5rem,3.4vw,2.15rem);letter-spacing:-.01em}
 h3{font-size:1.1rem}
@@ -105,7 +107,7 @@ header{
 .btn.small{padding:9px 15px;font-size:.9rem}
 
 /* ---------- hero ---------- */
-.hero{display:grid;gap:44px;align-items:center;padding-top:56px}
+.hero{display:grid;gap:52px;align-items:center;padding-top:clamp(56px,7vw,86px)}
 @media(min-width:900px){.hero{grid-template-columns:1.05fr .95fr}}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 18px}
 .hero-meta{color:var(--muted);font-size:.9rem;margin:0}
@@ -117,7 +119,7 @@ header{
 .phone-frame video{width:100%;height:auto}
 
 /* ---------- feature grid ---------- */
-.grid{display:grid;gap:18px}
+.grid{display:grid;gap:22px}
 .cols-3{grid-template-columns:1fr}
 @media(min-width:700px){.cols-3{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1000px){.cols-3{grid-template-columns:repeat(3,1fr)}}
@@ -146,7 +148,7 @@ header{
 .ipad-shot figcaption{color:var(--muted);font-size:.88rem;margin-top:10px}
 
 /* ---------- steps ---------- */
-.steps{display:grid;gap:18px;counter-reset:step}
+.steps{display:grid;gap:22px;counter-reset:step}
 @media(min-width:800px){.steps{grid-template-columns:repeat(3,1fr)}}
 .step{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:22px;position:relative}
 .step::before{
@@ -162,7 +164,7 @@ code{
   font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   background:rgba(61,220,122,.09);padding:2px 6px;border-radius:6px;font-size:.9em
 }
-.table-scroll{overflow-x:auto;margin:22px 0 0;border:1px solid var(--line);border-radius:var(--radius)}
+.table-scroll{overflow-x:auto;margin:30px 0 0;border:1px solid var(--line);border-radius:var(--radius)}
 table{border-collapse:collapse;width:100%;min-width:520px;font-size:.94rem}
 th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line)}
 th{background:var(--bg-soft);color:var(--text);font-weight:600;white-space:nowrap}
@@ -170,7 +172,7 @@ td{color:var(--muted)}
 tr:last-child td{border-bottom:none}
 
 /* ---------- videos ---------- */
-.videos{display:grid;gap:18px;grid-template-columns:repeat(2,1fr)}
+.videos{display:grid;gap:22px;grid-template-columns:repeat(2,1fr)}
 @media(min-width:900px){.videos{grid-template-columns:repeat(4,1fr)}}
 .video-card{
   background:var(--card);border:1px solid var(--line);
@@ -194,7 +196,7 @@ tr:last-child td{border-bottom:none}
 /* ---------- disclaimer ---------- */
 .notice{
   border:1px solid rgba(255,184,77,.35);background:rgba(255,184,77,.07);
-  border-radius:var(--radius);padding:22px 24px
+  border-radius:var(--radius);padding:30px 32px
 }
 .notice h2{color:var(--warn);font-size:1.25rem}
 .notice p{color:#e2d3b8;margin:0 0 10px;font-size:.96rem}
@@ -203,7 +205,7 @@ tr:last-child td{border-bottom:none}
 /* ---------- faq ---------- */
 details{
   border:1px solid var(--line);border-radius:12px;
-  background:var(--bg-soft);padding:16px 20px;margin-bottom:12px
+  background:var(--bg-soft);padding:18px 22px;margin-bottom:14px
 }
 details[open]{border-color:var(--accent-dim)}
 summary{cursor:pointer;font-weight:600;list-style:none}
@@ -215,10 +217,10 @@ details p{color:var(--muted);margin:12px 0 0;font-size:.96rem}
 /* ---------- cta band + footer ---------- */
 .band{
   text-align:center;background:linear-gradient(180deg,rgba(61,220,122,.08),transparent);
-  border:1px solid var(--accent-dim);border-radius:20px;padding:44px 24px
+  border:1px solid var(--accent-dim);border-radius:20px;padding:clamp(48px,6vw,68px) 24px
 }
 .band .lead{margin-inline:auto}
-footer{border-top:1px solid var(--line);padding:36px 0 52px;color:var(--muted);font-size:.9rem}
+footer{border-top:1px solid var(--line);padding:48px 0 64px;color:var(--muted);font-size:.9rem}
 .foot-links{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:14px}
 .center{text-align:center}
 </style>
@@ -272,7 +274,7 @@ footer{border-top:1px solid var(--line);padding:36px 0 52px;color:var(--muted);f
 <section class="wrap" id="features">
   <h2>Everything on one screen</h2>
   <p class="lead">A HUD-style layout built to be readable at a glance — in daylight, at night, and in motion.</p>
-  <div class="grid cols-3" style="margin-top:32px">
+  <div class="grid cols-3" style="margin-top:46px">
     <div class="card">
       <span class="ic" aria-hidden="true">🛩️</span>
       <h3>Real-time pitch &amp; roll</h3>
@@ -310,7 +312,7 @@ footer{border-top:1px solid var(--line);padding:36px 0 52px;color:var(--muted);f
 <section class="wrap">
   <h2>See it in the cockpit</h2>
   <p class="lead">Swipe through the display modes.</p>
-  <div class="shots" style="margin-top:28px">
+  <div class="shots" style="margin-top:46px">
     <figure><img src="assets/shot-1.webp" alt="AirHorizon artificial horizon showing pitch, roll, ground speed and altitude HUD" width="620" height="1344" loading="lazy" /><figcaption>Pitch, roll, speed &amp; altitude</figcaption></figure>
     <figure><img src="assets/shot-2.webp" alt="AirHorizon heading tape with a marked heading reference" width="620" height="1344" loading="lazy" /><figcaption>Heading tape &amp; markers</figcaption></figure>
     <figure><img src="assets/shot-3.webp" alt="AirHorizon Director Mode guidance bars driven by X-Plane flight director data" width="620" height="1344" loading="lazy" /><figcaption>Director mode via X-Plane</figcaption></figure>
@@ -331,7 +333,7 @@ footer{border-top:1px solid var(--line);padding:36px 0 52px;color:var(--muted);f
     on a desk next to your simulator rig rather than in your hand.
   </p>
 
-  <div class="grid cols-3" style="margin-top:32px">
+  <div class="grid cols-3" style="margin-top:46px">
     <figure class="ipad-shot">
       <img src="assets/ipad-1.webp" alt="AirHorizon on iPad showing the artificial horizon with speed and altitude HUD tapes" width="900" height="1201" loading="lazy" />
       <figcaption>Pitch, roll, speed and altitude across the full panel</figcaption>
@@ -375,7 +377,7 @@ footer{border-top:1px solid var(--line);padding:36px 0 52px;color:var(--muted);f
     Tested with X-Plane 11 and X-Plane 12.
   </p>
 
-  <div class="steps" style="margin-top:34px">
+  <div class="steps" style="margin-top:46px">
     <div class="step">
       <h3>Same network</h3>
       <p>Put your iPhone or iPad and the simulator computer on the same Wi-Fi network. Find the device IP under
@@ -393,7 +395,7 @@ footer{border-top:1px solid var(--line);padding:36px 0 52px;color:var(--muted);f
     </div>
   </div>
 
-  <h3 style="margin-top:44px">Data output rows to enable</h3>
+  <h3 style="margin-top:64px">Data output rows to enable</h3>
   <p class="lead">Tick network UDP output for these groups. AirHorizon reads standard X-Plane <code>DATA</code> units.</p>
   <div class="table-scroll">
     <table>
@@ -419,7 +421,7 @@ footer{border-top:1px solid var(--line);padding:36px 0 52px;color:var(--muted);f
 <section class="wrap" id="videos">
   <h2>AirHorizon in action</h2>
   <p class="lead">Short clips from the simulator and from the real world.</p>
-  <div class="videos" style="margin-top:30px">
+  <div class="videos" style="margin-top:46px">
 
     <div class="video-card">
       <button class="video-thumb" data-yt="Hcep4RRqKKI" aria-label="Play: AirHorizon with X-Plane 12">
@@ -461,7 +463,7 @@ footer{border-top:1px solid var(--line);padding:36px 0 52px;color:var(--muted);f
     sensor handles altitude. That is the same display, whether you are at a desk, in a car, or in a
     passenger seat at 30,000 feet.
   </p>
-  <div class="grid cols-3" style="margin-top:30px">
+  <div class="grid cols-3" style="margin-top:46px">
     <div class="card"><h3>On-device processing</h3><p>Sensor data is processed on your device. There is no account to create and no telemetry to sign up for.</p></div>
     <div class="card"><h3>Portrait or landscape</h3><p>Designed for the way people actually mount a phone — with calibration to zero out the mounting angle.</p></div>
     <div class="card"><h3>iPhone and iPad</h3><p>One universal app, one free download, laid out natively for both screens — <a href="#ipad">see it on iPad</a>.</p></div>
@@ -489,7 +491,7 @@ footer{border-top:1px solid var(--line);padding:36px 0 52px;color:var(--muted);f
 <!-- ============ FAQ ============ -->
 <section class="wrap" id="faq">
   <h2>Frequently asked questions</h2>
-  <div style="margin-top:26px">
+  <div style="margin-top:40px">
     <details>
       <summary>Does AirHorizon work with X-Plane 12?</summary>
       <p>Yes. It reads standard X-Plane <code>DATA</code> packets and has been tested with both X-Plane 11 and X-Plane 12.</p>
