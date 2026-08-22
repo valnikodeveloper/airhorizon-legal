@@ -1,0 +1,44 @@
+# AirHorizon
+
+AirHorizon is an iPhone and iPad aviation utility that provides a real-time artificial horizon and flight-style head-up display. It can use the device's own sensors or receive live telemetry from X-Plane 11 and X-Plane 12 over a local network.
+
+Official website: https://airhorizon.app/
+App Store: https://apps.apple.com/app/id1532431166
+Support: https://valnikodeveloper.github.io/support/?app=airhorizon
+Privacy Policy: https://airhorizon.app/privacy.html
+Terms of Service: https://airhorizon.app/terms-of-service.html
+
+## Main capabilities
+
+- Real-time pitch and roll artificial horizon.
+- Heading tape with one-tap markers and off-screen marker cues.
+- Ground-speed and altitude tapes.
+- Flight director guidance in Director Mode when supported simulator data is available.
+- Night-vision HUD palette and adjustable display contrast.
+- Portrait and landscape layouts for iPhone and iPad.
+- One-tap pitch and roll calibration for different device mounting angles.
+
+## X-Plane integration
+
+- Compatible with X-Plane 11 and X-Plane 12.
+- Receives standard X-Plane DATA packets over UDP on local network port 49000.
+- Does not require an X-Plane plugin or additional desktop software.
+- Uses X-Plane data rows 3, 17, 20, and 108 for speed, attitude, altitude, and flight-director information.
+
+## Standalone operation and privacy
+
+- Motion sensors provide pitch and roll.
+- Location services provide ground speed and a true-north heading reference.
+- The device barometer provides altitude when available.
+- Sensor data is processed on the device.
+- No AirHorizon account is required.
+
+## Availability
+
+- Available for iPhone and iPad.
+- Requires iOS 18.1 or iPadOS 18.1 or later.
+- Free to download, with some display options available through an optional Pro upgrade.
+
+## Safety
+
+AirHorizon is a consumer application for flight simulation, training reference, and general interest. It is not a certified aviation instrument, is not approved for navigation or aircraft operation, and must not be used as a primary or backup attitude reference in a real aircraft.
